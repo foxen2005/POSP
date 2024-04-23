@@ -92,9 +92,9 @@ public class SpreadsheetLoader : MonoBehaviour
             StartCoroutine(LoadSpreadsheet());
             timer = 0;
             print("refresco el lector");
-            print("loader envia  " + name_d_cop[1]);
+        
         }
         timer = timer + Time.deltaTime;
-      
+        
     }
 }

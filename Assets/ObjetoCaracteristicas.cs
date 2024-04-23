@@ -7,11 +7,12 @@ public class ObjetoCaracteristicas : MonoBehaviour
     public int valor2;
 
     // Inicializa el objeto con sus características
-    public void ConfigurarObjeto(string nombre, string Grou, int Value)
+    public void ConfigurarObjeto(string nombre, string Grou, int Value, int control)
     {
         nombreObjeto = nombre;
         nombreGrupo = Grou;
         Valor_objet = Value;
+        valor2 = control;
     }
 
     // Método para mostrar las características en la consola
