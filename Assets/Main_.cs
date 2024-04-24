@@ -15,7 +15,7 @@ public class Main_ : MonoBehaviour
     public string spreadsheetId = "1Ft2m1xzDQl-P3QXbM6uIbeknBa4reGfDNppSyhZFsjY";
     public string gid = "0";
     public static string jsonContent;
-    float timer;
+    public float timer;
     float timerStop;
     public string[] name_d, value_d, group_d, control_d;
     
@@ -25,7 +25,7 @@ public class Main_ : MonoBehaviour
     //BotonGenerador
     public GameObject buttonPrefab; // Prefab del botón
     public GameObject buttonParent; // GameObject padre de los botones
-   public bool paso = false;
+    public bool paso = true;
 
     //ControlBoton
     public GameObject objetoPadre; // Asigna el objeto padre en el inspector
@@ -111,6 +111,7 @@ public class Main_ : MonoBehaviour
             for (int i = 0; i < name_d.Length; i++)
             {
                 print("flag2");
+
                 GameObject button = Instantiate(buttonPrefab, buttonParent.transform);
                 button.name = name_d[i];
                 button.GetComponentInChildren<TextMeshProUGUI>().text = name_d[i];
@@ -178,35 +179,42 @@ public class Main_ : MonoBehaviour
     {
         //JSON update
 
-        if (timer > 150f)
-        {
-            StartCoroutine(LoadSpreadsheet());
-            timer = 0;
-            print("refresco el lector");
-        }
-        timer = timer + Time.deltaTime;
+       
+        
 
         //json endd
 
         //BotonGenerador
 
-        if (paso)
+        if (timer > 3f && paso)
         {
-                     ///implementar delta time, para el cargado de elementos
-            GenerateButtons();
             paso = false;
+            ///implementar delta time, para el cargado de elementos
+            GenerateButtons();
+            
             print("generar botones unpdate activado");
 
         }
         //botongenerator Ends
+
+
+
         if (oneShot && objetoPadre != null)
         {
             asigna();
             oneShot = false;
         }
 
-       
 
+
+        if (timer > 150f)
+        {
+            StartCoroutine(LoadSpreadsheet());
+            timer = 0;
+            print("refresco el lector");
+        }
+
+        timer = timer + Time.deltaTime;
 
     }//update
 
