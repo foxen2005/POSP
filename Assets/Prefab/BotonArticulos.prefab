@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4087862015486450311}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -808284953463106634}
         m_TargetAssemblyTypeName: ObjetoCaracteristicas, Assembly-CSharp
-        m_MethodName: CopiarPadre
+        m_MethodName: SumarValor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -152,7 +152,6 @@ MonoBehaviour:
   Valor_objet: 0
   valor2: 0
   textoPro: {fileID: 2870289193279476391}
-  nuevoPadre: {fileID: 0}
 --- !u!1 &4203750842473363039
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,8 +219,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cfa61c37a9e6fba479bc2290fb31bc47, type: 2}
+  m_sharedMaterial: {fileID: 2865748109728009191, guid: cfa61c37a9e6fba479bc2290fb31bc47, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -245,7 +244,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 9.65
+  m_fontSize: 9.2
   m_fontSizeBase: 12.17
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -354,8 +353,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cfa61c37a9e6fba479bc2290fb31bc47, type: 2}
+  m_sharedMaterial: {fileID: 2865748109728009191, guid: cfa61c37a9e6fba479bc2290fb31bc47, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

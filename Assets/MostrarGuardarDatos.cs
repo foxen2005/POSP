@@ -18,26 +18,55 @@ public class MostrarGuardarDatos : MonoBehaviour
     void Start()
     {
         // Se establece la ruta del archivo
-        rutaArchivo = Application.dataPath + "/SaveData/datosObjeto.txt";
+     //   rutaArchivo = Application.dataPath + "/SaveData/datosObjeto.txt";
     }
 
-    // Función para mostrar la información en el TMP Text
-  
 
-    // Función para guardar la información en un archivo
+
+
+
     public void GuardarInformacionEnArchivo()
     {
-        // Se crea un objeto StreamWriter para escribir en el archivo
-        using (StreamWriter writer = new StreamWriter(rutaArchivo, true))
+        blockText = textoRecibido;
+
+        // Ruta base del archivo
+        string rutaBaseArchivo = Application.dataPath + "/SaveData/datosObjeto";
+
+        // Contador para generar nombres de archivo secuenciales
+        int contadorArchivo = 1;
+
+        // Ruta del archivo actual
+        string rutaArchivoActual = rutaBaseArchivo + contadorArchivo + ".txt";
+
+        // Verifica si el archivo existe
+        while (File.Exists(rutaArchivoActual))
         {
-            // Se escribe la información en el archivo
-            writer.WriteLine(textoRecibido);
+            // Incrementa el contador
+            contadorArchivo++;
+
+            // Genera una nueva ruta de archivo
+            rutaArchivoActual = rutaBaseArchivo + contadorArchivo + ".txt";
+        }
+
+        // Abre el archivo para escribir
+        using (StreamWriter writer = new StreamWriter(rutaArchivoActual, true))
+        {
+            // Escribe la información en el archivo
+            writer.WriteLine(blockText);
             writer.Close();
 
-            // Se muestra un mensaje de confirmación
-            Debug.Log("Información guardada en el archivo: " + rutaArchivo);
+            // Muestra un mensaje de confirmación
+            Debug.Log("Información guardada en el archivo: " + rutaArchivoActual);
+            Debug.Log("Información guardada en el archivo: " + blockText);
         }
+
+        blockText = "";
+        textoRecibido = "";
+
+
+
     }
+
 
     // Función para asociar la función GuardarInformacionEnArchivo a un botón
     public void AsociarFuncionABoton(Button boton)
@@ -48,7 +77,7 @@ public class MostrarGuardarDatos : MonoBehaviour
 
     public void Update()
     {
-        blockText = blockText + textoRecibido;
-        textoAMostrar.text = "\n " + blockText;
+       // blockText = blockText + "\n"+textoRecibido;
+        textoAMostrar.text = textoRecibido;
     }
 }

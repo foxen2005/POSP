@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -11,7 +12,7 @@ public class ObjetoCaracteristicas : MonoBehaviour
     public int valor2;
 
     public TextMeshProUGUI textoPro;
-   public TextMeshProUGUI  TextCompra;
+
 
     // Para elementos de UI
 
@@ -24,6 +25,7 @@ public class ObjetoCaracteristicas : MonoBehaviour
     {
         // Obtiene el componente Button del objeto actual
         miBoton = GetComponent<Button>();
+
         if (miBoton != null)
         {
             // Agrega un listener al botón que llamará al método SumarValor cuando se haga clic
@@ -31,6 +33,7 @@ public class ObjetoCaracteristicas : MonoBehaviour
 
         }
 
+        textoPro.text = "$ " + Valor_objet.ToString();
 
     }
 
@@ -43,39 +46,38 @@ public class ObjetoCaracteristicas : MonoBehaviour
         nombreGrupo = Grou;
         Valor_objet = Value;
         valor2 = control;
+
+       
     }
 
+    public void SumarValor()
+    {
+        // Suma valorASumar a la variable estática SUMA del script ControladorSuma
+        ControladorSuma.SUMA += Valor_objet;
+        MostrarGuardarDatos.textoRecibido = MostrarGuardarDatos.textoRecibido + "Pedido:\n" + nombreObjeto + "\nCat:\n" + nombreGrupo + "\n$\n" + Valor_objet + "\n";
+
+        Debug.Log("Nuevo valor de SUMA: " + ControladorSuma.SUMA);
+        Debug.Log("Nuevo valor en lista: " + MostrarGuardarDatos.textoRecibido);
+        // Actualiza el texto del TMP TextCompra
+
+    }
     // M�todo para mostrar las caracter�sticas en la consola
     public void MostrarCaracteristicas()
     {
         Debug.Log("Nombre: " + nombreObjeto + ", Valor 1: " + nombreGrupo + ", Valor 2: " + Valor_objet);
-       
+
     }
 
-    void SumarValor()
-    {
-        // Suma valorASumar a la variable estática SUMA del script ControladorSuma
-        ControladorSuma.SUMA += Valor_objet;
-        MostrarGuardarDatos.textoRecibido = "Pedido:\n" + nombreObjeto + "\nCat:\n" + nombreGrupo + "\n$\n" + Valor_objet;
-        Debug.Log("Nuevo valor de SUMA: " + ControladorSuma.SUMA);
-
-        // Actualiza el texto del TMP TextCompra
-        
-    }
+   
 
 
-    public void ImprimirLista()
-    {
-        
 
-        TextCompra.text = "Pedido: \n " + nombreObjeto + "\n $: " + Valor_objet;
-    }
 
 
 
     private void Update()
     {
-        textoPro.text = "$ " + Valor_objet.ToString();
+        
     }
 
 
