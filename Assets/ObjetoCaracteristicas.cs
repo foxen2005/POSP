@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 
 public class ObjetoCaracteristicas : MonoBehaviour
@@ -9,13 +11,16 @@ public class ObjetoCaracteristicas : MonoBehaviour
     public int valor2;
 
     public TextMeshProUGUI textoPro;
+   public TextMeshProUGUI  TextCompra;
 
-    public RectTransform nuevoPadre;
+    // Para elementos de UI
+
+
     // Referencia al botón, asigna esto en el inspector de Unity
     private Button miBoton;
 
 
- void Start()
+    void Start()
     {
         // Obtiene el componente Button del objeto actual
         miBoton = GetComponent<Button>();
@@ -23,9 +28,10 @@ public class ObjetoCaracteristicas : MonoBehaviour
         {
             // Agrega un listener al botón que llamará al método SumarValor cuando se haga clic
             miBoton.onClick.AddListener(SumarValor);
+
         }
 
-       
+
     }
 
 
@@ -43,37 +49,27 @@ public class ObjetoCaracteristicas : MonoBehaviour
     public void MostrarCaracteristicas()
     {
         Debug.Log("Nombre: " + nombreObjeto + ", Valor 1: " + nombreGrupo + ", Valor 2: " + Valor_objet);
+       
     }
 
     void SumarValor()
     {
         // Suma valorASumar a la variable estática SUMA del script ControladorSuma
         ControladorSuma.SUMA += Valor_objet;
-        
+        MostrarGuardarDatos.textoRecibido = "Pedido:\n" + nombreObjeto + "\nCat:\n" + nombreGrupo + "\n$\n" + Valor_objet;
         Debug.Log("Nuevo valor de SUMA: " + ControladorSuma.SUMA);
+
+        // Actualiza el texto del TMP TextCompra
+        
     }
 
-    public void CopiarGameObject()
+
+    public void ImprimirLista()
     {
+        
 
-
-        // Crea una nueva instancia del objeto actual (el botón)
-        GameObject copia = Instantiate(gameObject);
-
-        // Establece el nuevo padre para la copia
-        copia.transform.SetParent(nuevoPadre, false);
-
-        // Opcional: Configura la posición y escala si es necesario
-        copia.transform.localPosition = Vector3.zero;
-        copia.transform.localScale = Vector3.one;
-
-        // Asegúrate de que la copia tenga un RectTransform
-        if (copia.GetComponent<RectTransform>() == null)
-        {
-            copia.AddComponent<RectTransform>();
-        }
+        TextCompra.text = "Pedido: \n " + nombreObjeto + "\n $: " + Valor_objet;
     }
-
 
 
 
@@ -84,6 +80,3 @@ public class ObjetoCaracteristicas : MonoBehaviour
 
 
 }
-
-
-
