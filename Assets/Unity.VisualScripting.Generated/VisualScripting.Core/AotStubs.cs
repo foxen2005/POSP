@@ -584,6 +584,9 @@ namespace Unity.VisualScripting.Generated.Aot
 	// UnityEngine.WindZone.op_Implicit
 	// UnityEngine.WindZone.op_Equality
 	// UnityEngine.WindZone.op_Inequality
+	// ContadorDeArchivos.op_Implicit
+	// ContadorDeArchivos.op_Equality
+	// ContadorDeArchivos.op_Inequality
 	// ControladorSuma.op_Implicit
 	// ControladorSuma.op_Equality
 	// ControladorSuma.op_Inequality
@@ -626,6 +629,9 @@ namespace Unity.VisualScripting.Generated.Aot
 	// SpreadsheetLoader.op_Implicit
 	// SpreadsheetLoader.op_Equality
 	// SpreadsheetLoader.op_Inequality
+	// SpreadsheetWriter.op_Implicit
+	// SpreadsheetWriter.op_Equality
+	// SpreadsheetWriter.op_Inequality
 	// TimelinePreferences.op_Implicit
 	// TimelinePreferences.op_Equality
 	// TimelinePreferences.op_Inequality
@@ -7505,6 +7511,41 @@ namespace Unity.VisualScripting.Generated.Aot
 			optimized.Invoke(default(object[]));
 		}
 		
+		// ContadorDeArchivos.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void ContadorDeArchivos_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// ContadorDeArchivos.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void ContadorDeArchivos_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// ContadorDeArchivos.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void ContadorDeArchivos_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
 		// ControladorSuma.op_Implicit
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void ControladorSuma_op_Implicit()
@@ -7986,6 +8027,41 @@ namespace Unity.VisualScripting.Generated.Aot
 		// SpreadsheetLoader.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void SpreadsheetLoader_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// SpreadsheetWriter.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void SpreadsheetWriter_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// SpreadsheetWriter.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void SpreadsheetWriter_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// SpreadsheetWriter.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void SpreadsheetWriter_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);

@@ -116,7 +116,18 @@ public class Main_ : MonoBehaviour
                 button.name = name_d[i];
                 button.GetComponentInChildren<TextMeshProUGUI>().text = name_d[i];
 
-                int tempo = 0, control = 0;
+                /*// Cambia el color del botón aquí
+                Color newButtonColor = Color.red; // Puedes definir el color que prefieras
+                button.GetComponent<Image>().color = newButtonColor;*/
+
+                Color buttonColor = GetColorByIndex(i);
+                button.GetComponent<Image>().color = buttonColor;
+
+               
+
+
+
+                    int tempo = 0, control = 0;
 
                 ObjetoCaracteristicas caracteristicas = button.GetComponent<ObjetoCaracteristicas>();
                 if (caracteristicas != null)
@@ -136,6 +147,21 @@ public class Main_ : MonoBehaviour
         else
         {
             Debug.LogError("Los arrays no tienen la misma longitud.");
+        }
+
+        Color GetColorByIndex(int index)
+        {
+            // Define una lista de colores
+            Color[] colors = new Color[]
+            {
+            Color.red,
+            Color.blue,
+            Color.green,
+            Color.yellow,
+            Color.cyan,
+                // ... más colores según necesites ...
+            };
+            return colors[index % colors.Length];
         }
 
     }// generador boton

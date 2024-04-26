@@ -13,6 +13,8 @@ public class ObjetoCaracteristicas : MonoBehaviour
 
     public TextMeshProUGUI textoPro;
 
+    private bool puedeSumar = true; 
+    public float cooldown = 0.5f;
 
     // Para elementos de UI
 
@@ -52,15 +54,25 @@ public class ObjetoCaracteristicas : MonoBehaviour
 
     public void SumarValor()
     {
-        // Suma valorASumar a la variable estática SUMA del script ControladorSuma
-        ControladorSuma.SUMA += Valor_objet;
-        MostrarGuardarDatos.textoRecibido = MostrarGuardarDatos.textoRecibido + "Pedido:\n" + nombreObjeto + "\nCat:\n" + nombreGrupo + "\n$\n" + Valor_objet + "\n";
-
-        Debug.Log("Nuevo valor de SUMA: " + ControladorSuma.SUMA);
-        Debug.Log("Nuevo valor en lista: " + MostrarGuardarDatos.textoRecibido);
-        // Actualiza el texto del TMP TextCompra
-
+        if (puedeSumar)
+        {
+            // Suma valorASumar a la variable estática SUMA del script ControladorSuma
+            ControladorSuma.SUMA += Valor_objet;
+            MostrarGuardarDatos.textoRecibido +=  nombreObjeto + "\nCat: " + nombreGrupo + "\n$ " + Valor_objet + "\n";
+            puedeSumar = false;
+            Debug.Log("Nuevo valor de SUMA: " + ControladorSuma.SUMA);
+            Debug.Log("Nuevo valor en lista: " + MostrarGuardarDatos.textoRecibido);
+            // Actualiza el texto del TMP TextCompra
+            StartCoroutine(Cooldown());
+        }
     }
+
+    private IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(cooldown);
+        puedeSumar = true; // Reactiva la suma después del cooldown
+    }
+
     // M�todo para mostrar las caracter�sticas en la consola
     public void MostrarCaracteristicas()
     {
