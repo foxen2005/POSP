@@ -9,7 +9,7 @@ public class MostrarGuardarDatos : MonoBehaviour
     // Variables para el texto
     public TMP_Text textoAMostrar, textNotificaEscritura, RutaText; // Texto donde se mostrará la información
     public static string textoRecibido; // Cadena que contiene la información del objeto
-    string blockText, sheet = "sheet = \"sheet = \\\"google.visualization.Query.setResponse({ \\\"\\\"version\\\"\\\":\\\"\\\"0.6\\\"\\\",\\\"\\\"reqId\\\"\\\":\\\"\\\"0\\\"\\\",\\\"\\\"status\\\":\\\"\\\"\\\"\\\"\\\"\\\"ok\\\"\\\",\\\"\\\"sig\\\"\\\":\\\"\\\"1299033392\\\"\\\",\\\"\\\"table\\\"\\\":{ \\\"\\\"cols\\\"\\\":[{ \\\"\\\"id\\\":\\\"A\\\"\\\",\\\"\\\"label\\\":\\\"\\\"\\\",\\\"\\\"type\\\":\\\"string\\\"},{ \\\"id\\\":\\\"B\\\",\\\"label\\\":\\\"\\\",\\\"type\\\":\\\"string\\\"},{ \\\"id\\\":\\\"C\\\",\\\"label\\\":\\\"\\\",\\\"type\\\":\\\"string\\\"},{ \\\"id\\\":\\\"D\\\",\\\"label\\\":\\\"\\\",\\\"type\\\":\\\"string\\\"}],\\\"rows\\\":[{ \\\"c\\\":[{ \\\"v\\\":\\\"name\\\"},{ \\\"v\\\":\\\"value\\\"},{ \\\"v\\\":\\\"group\\\"},{ \\\"v\\\":\\\"control\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Pollo\\\"},{ \\\"v\\\":\\\"5111\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Pizza\\\"},{ \\\"v\\\":\\\"5400\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Pasta\\\"},{ \\\"v\\\":\\\"3500\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Cocacola\\\"},{ \\\"v\\\":\\\"2002\\\"},{ \\\"v\\\":\\\"Bebidas\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Fanta\\\"},{ \\\"v\\\":\\\"1500\\\"},{ \\\"v\\\":\\\"Bebidas\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Agua\\\"},{ \\\"v\\\":\\\"1111\\\"},{ \\\"v\\\":\\\"Bebidas\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Galletas\\\"},{ \\\"v\\\":\\\"2111\\\"},{ \\\"v\\\":\\\"Postres\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Chicles\\\"},{ \\\"v\\\":\\\"1550\\\"},{ \\\"v\\\":\\\"Postres\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Torta\\\"},{ \\\"v\\\":\\\"1500\\\"},{ \\\"v\\\":\\\"Postres\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"pastelito\\\"},{ \\\"v\\\":\\\"2500\\\"},{ \\\"v\\\":\\\"fritura\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Camarones\\\"},{ \\\"v\\\":\\\"11110\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]}],\\\"parsedNumHeaders\\\":0} })\\\" ;\";";
+    string blockText, sheet = "sheet = \"sheet = \\\"google.visualization.Query.setResponse({ \\\"\\\"version\\\"\\\":\\\"\\\"0.6\\\"\\\",\\\"\\\"reqId\\\"\\\":\\\"\\\"0\\\"\\\",\\\"\\\"status\\\":\\\"\\\"\\\"\\\"\\\"\\\"ok\\\"\\\",\\\"\\\"sig\\\"\\\":\\\"\\\"1299033392\\\"\\\",\\\"\\\"table\\\"\\\":{ \\\"\\\"cols\\\"\\\":[{ \\\"\\\"id\\\":\\\"A\\\"\\\",\\\"\\\"label\\\":\\\"\\\"\\\",\\\"\\\"type\\\":\\\"string\\\"},{ \\\"id\\\":\\\"B\\\",\\\"label\\\":\\\"\\\",\\\"type\\\":\\\"string\\\"},{ \\\"id\\\":\\\"C\\\",\\\"label\\\":\\\"\\\",\\\"type\\\":\\\"string\\\"},{ \\\"id\\\":\\\"D\\\",\\\"label\\\":\\\"\\\",\\\"type\\\":\\\"string\\\"}],\\\"rows\\\":[{ \\\"c\\\":[{ \\\"v\\\":\\\"name\\\"},{ \\\"v\\\":\\\"value\\\"},{ \\\"v\\\":\\\"group\\\"},{ \\\"v\\\":\\\"control\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Pollo\\\"},{ \\\"v\\\":\\\"0000\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Pizza\\\"},{ \\\"v\\\":\\\"0000\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Pasta\\\"},{ \\\"v\\\":\\\"3500\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Cocacola\\\"},{ \\\"v\\\":\\\"2002\\\"},{ \\\"v\\\":\\\"Bebidas\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Fanta\\\"},{ \\\"v\\\":\\\"1500\\\"},{ \\\"v\\\":\\\"Bebidas\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Agua\\\"},{ \\\"v\\\":\\\"1111\\\"},{ \\\"v\\\":\\\"Bebidas\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Galletas\\\"},{ \\\"v\\\":\\\"2111\\\"},{ \\\"v\\\":\\\"Postres\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Chicles\\\"},{ \\\"v\\\":\\\"1550\\\"},{ \\\"v\\\":\\\"Postres\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Torta\\\"},{ \\\"v\\\":\\\"1500\\\"},{ \\\"v\\\":\\\"Postres\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"pastelito\\\"},{ \\\"v\\\":\\\"2500\\\"},{ \\\"v\\\":\\\"fritura\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Camarones\\\"},{ \\\"v\\\":\\\"11110\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]}],\\\"parsedNumHeaders\\\":0} })\\\" ;\";";
     string[] TextArray;
 
 
@@ -21,6 +21,8 @@ public class MostrarGuardarDatos : MonoBehaviour
 
 
     public SpreadsheetWriter FuncionCall;
+    public PrintPDF impresionPdf;
+    public PrintingManager GeneradorPDF;
 
     // Variable para el archivo
     private string rutaArchivo; // Ruta del archivo donde se guardará la información
@@ -28,13 +30,6 @@ public class MostrarGuardarDatos : MonoBehaviour
     // Start
     void Start()
     {
-
-
-
-
-
-
-
 
         // Se establece la ruta del archivo
      //   rutaArchivo = Application.dataPath + "/SaveData/datosObjeto.txt";
@@ -84,9 +79,20 @@ public class MostrarGuardarDatos : MonoBehaviour
             Debug.Log("Información guardada en el archivo: " + rutaArchivoActual);
             Debug.Log("Información guardada en el archivo: " + blockText);
 
-            FuncionCall = GameObject.Find("Main Camera").GetComponent<SpreadsheetWriter>();
 
-            FuncionCall.EnviarDatos(sheet);
+            //PDF smartPDF 
+           /* impresionPdf = GameObject.Find("Main Camera").GetComponent<PrintPDF>();
+            impresionPdf.PrintDocument(blockText);*/
+
+            //printingManagerPDF
+           /* GeneradorPDF = GameObject.Find("Main Camera").GetComponent<PrintingManager>();
+           
+            GeneradorPDF.GenerateFile(blockText, contadorArchivo.ToString());
+           // GeneradorPDF.PrintFiles(contadorArchivo.ToString());
+
+          /*  //enviar a server
+            FuncionCall = GameObject.Find("Main Camera").GetComponent<SpreadsheetWriter>();
+            FuncionCall.EnviarDatos(sheet);*/
 
 
         }

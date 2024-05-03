@@ -6,9 +6,10 @@ public class ContadorDeArchivos : MonoBehaviour
 {
     // Ruta de la carpeta a buscar
     private string rutaCarpeta = "/idbfs/";
+    private string rutaCarpeta2 = "/";
 
     // Variable pública de TextMeshProUGUI para mostrar el número de archivos
-    public TextMeshProUGUI textoDeArchivos;
+    public TextMeshProUGUI textoDeArchivos, textoARchivo2;
 
     void Start()
     {
@@ -33,8 +34,11 @@ public class ContadorDeArchivos : MonoBehaviour
         }
     }
 
+ 
+
     private void Update()
     {
         ContarArchivosEnCarpeta();
+   
     }
 }

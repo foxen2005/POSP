@@ -5,7 +5,7 @@ using System.Collections;
 public class SpreadsheetWriter : MonoBehaviour
 {
     // URL de tu aplicación web de Google Apps Script
-    string googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycbztMzbdnOBL7mzHp3jLM_Q7KowB5EF8mfcIfAcA-eZRy2qg64X38nPlINiHM_Iu_R1sBg/exec";
+    string googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycbzgrmv1kv0YiocMWKVpQ7i0Cy7U6qWigli9eUfQ4WquXTFkeMxFER355d42SX11zXqj/exec";
 
     // Método para enviar datos al Google Sheet
     public void EnviarDatos(string datos)

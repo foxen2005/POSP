@@ -33,11 +33,14 @@ public class Main_ : MonoBehaviour
     public bool oneShot = true;
 
 
+    //colores
+    Color Naranja;
+
 
 
     void Start()
     {
-
+        Naranja = new Color(255, 120, 0);
                 StartCoroutine(LoadSpreadsheet()); //Json Carga
                
     }
@@ -154,12 +157,13 @@ public class Main_ : MonoBehaviour
             // Define una lista de colores
             Color[] colors = new Color[]
             {
-            Color.red,
+
+            Naranja,/*
             Color.blue,
             Color.green,
             Color.yellow,
-            Color.cyan,
-                // ... más colores según necesites ...
+            Color.cyan,*/
+               
             };
             return colors[index % colors.Length];
         }
