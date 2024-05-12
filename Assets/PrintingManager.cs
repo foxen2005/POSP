@@ -17,14 +17,14 @@ public class PrintingManager : MonoBehaviour
     {
          //path = Application.dataPath + "/Resources/Ticket.pdf";  
 
-        //  path = Application.persistentDataPath + "/Resources/Ticket.pdf";
+          path = Application.persistentDataPath + "/Resources/Ticket.pdf";
     }
 
     public void GenerateFile(string textRecibe, string numFile) {
-        if (File.Exists(Application.persistentDataPath + "bolet.pdf"))
-            File.Delete(Application.persistentDataPath + "bolet.pdf");
-        //using (var fileStream = new FileStream(path, FileMode.CreateNew, FileAccess.Write))
-        using (var fileStream = new FileStream(Application.persistentDataPath + "bolet.pdf", FileMode.CreateNew, FileAccess.Write))
+        if (File.Exists(Application.persistentDataPath + "Ticket.pdf"))
+            File.Delete(Application.persistentDataPath + "Ticket.pdf");
+        using (var fileStream = new FileStream(path, FileMode.CreateNew, FileAccess.Write))
+        //using (var fileStream = new FileStream(Application.persistentDataPath + "bolet.pdf", FileMode.CreateNew, FileAccess.Write))
         {
             var document = new Document(PageSize.A7, 10f, 10f, 10f, 0f);
             var writer = PdfWriter.GetInstance(document, fileStream);
@@ -67,13 +67,13 @@ public class PrintingManager : MonoBehaviour
         //PrintFiles();
     }
 
-   public void PrintFiles(string numFile)
+   public void PrintFiles()
     {
-        Debug.Log(Application.persistentDataPath + "bolet.pdf");
+        Debug.Log(path);
         if (path == null)
             return;
 
-        if (File.Exists(Application.persistentDataPath + "bolet.pdf"))
+        if (File.Exists(path))
         {
             Debug.Log("file found");
             //var startInfo = new System.Diagnostics.ProcessStartInfo(path);
@@ -96,7 +96,7 @@ public class PrintingManager : MonoBehaviour
         process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
         process.StartInfo.UseShellExecute = true;
         process.StartInfo.FileName = path;
-        //process.StartInfo.Verb = "print";
+        process.StartInfo.Verb = "print";
         
         process.Start();
         //process.WaitForExit();

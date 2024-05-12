@@ -15,7 +15,7 @@ public class PrintPDF : MonoBehaviour
     
     string headerDirectory;
 
-    public InputField textInput;
+   
     public Button printButton;
 
 
@@ -42,6 +42,6 @@ public class PrintPDF : MonoBehaviour
     public void PrintDocument(string textoRecibir)
     {
        
-        smartPrinter.PrintDocument("/idbfs/"+textoRecibir, null);
+        smartPrinter.PrintDocument(textoRecibir, null);
     }
 }

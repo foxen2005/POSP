@@ -852,9 +852,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 519420039}
-        m_TargetAssemblyTypeName: FtpManager, Assembly-CSharp
-        m_MethodName: Enviar
+      - m_Target: {fileID: 519420038}
+        m_TargetAssemblyTypeName: PrintingManager, Assembly-CSharp
+        m_MethodName: PrintFiles
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1555,7 +1555,6 @@ GameObject:
   - component: {fileID: 519420036}
   - component: {fileID: 519420037}
   - component: {fileID: 519420038}
-  - component: {fileID: 519420039}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1708,26 +1707,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 558fe7ed688933742b5e613c0f019658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textInput: {fileID: 0}
-  printButton: {fileID: 0}
+  printButton: {fileID: 208993159}
 --- !u!114 &519420038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 342fca0fefa78f94aac97f66c5c21584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &519420039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1736,7 +1722,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d0a88b5f4ebe4e42b89eff9bc6b23c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 342fca0fefa78f94aac97f66c5c21584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &542366959
@@ -3225,8 +3211,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2087086582}
   m_HandleRect: {fileID: 2087086581}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.209251
+  m_Value: 0.9999999
+  m_Size: 0.20925102
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5226,7 +5212,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 905907880}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.9999999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5591,8 +5577,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1178169791}
   m_HandleRect: {fileID: 1178169790}
   m_Direction: 2
-  m_Value: -0.0000022234228
-  m_Size: 0.90956783
+  m_Value: -0.0000029645682
+  m_Size: 0.90956795
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
