@@ -852,6 +852,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream
       - m_Target: {fileID: 519420038}
         m_TargetAssemblyTypeName: PrintingManager, Assembly-CSharp
         m_MethodName: PrintFiles
@@ -864,6 +865,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+=======
+>>>>>>> Stashed changes
 --- !u!114 &208993160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,7 +1556,6 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   - component: {fileID: 519420036}
-  - component: {fileID: 519420037}
   - component: {fileID: 519420038}
   m_Layer: 0
   m_Name: Main Camera
@@ -1700,6 +1702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981b9047d238a6a49b61db7655cedaf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
 --- !u!114 &519420037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1713,6 +1716,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   printButton: {fileID: 208993159}
+=======
+>>>>>>> Stashed changes
 --- !u!114 &519420038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7034,9 +7039,9 @@ MonoBehaviour:
   textoAMostrar: {fileID: 1105298953}
   textNotificaEscritura: {fileID: 751974200}
   RutaText: {fileID: 1559546226}
-  FuncionCall: {fileID: 0}
+  FuncionCall: {fileID: 519420036}
   impresionPdf: {fileID: 0}
-  GeneradorPDF: {fileID: 0}
+  GeneradorPDF: {fileID: 519420038}
 --- !u!224 &2118460903
 RectTransform:
   m_ObjectHideFlags: 0

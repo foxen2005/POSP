@@ -85,7 +85,7 @@ public class MostrarGuardarDatos : MonoBehaviour
             impresionPdf.PrintDocument(blockText);*/
 
             //printingManagerPDF
-           /* GeneradorPDF = GameObject.Find("Main Camera").GetComponent<PrintingManager>();
+           GeneradorPDF = GameObject.Find("Main Camera").GetComponent<PrintingManager>();
            
             GeneradorPDF.GenerateFile(blockText, contadorArchivo.ToString());
            // GeneradorPDF.PrintFiles(contadorArchivo.ToString());
