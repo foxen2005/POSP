@@ -21,17 +21,17 @@ public class PrintingManager : MonoBehaviour
     }
 
     public void GenerateFile(string textRecibe, string numFile) {
-<<<<<<< Updated upstream
+
         if (File.Exists(Application.persistentDataPath + "Ticket.pdf"))
             File.Delete(Application.persistentDataPath + "Ticket.pdf");
         using (var fileStream = new FileStream(path, FileMode.CreateNew, FileAccess.Write))
         //using (var fileStream = new FileStream(Application.persistentDataPath + "bolet.pdf", FileMode.CreateNew, FileAccess.Write))
-=======
+
         if (File.Exists(Application.persistentDataPath + " bolet.pdf"))
             File.Delete(Application.persistentDataPath + " bolet.pdf");
         //using (var fileStream = new FileStream(path, FileMode.CreateNew, FileAccess.Write))
         using (var fileStream = new FileStream(Application.persistentDataPath + " bolet " + numFile+ ".pdf", FileMode.CreateNew, FileAccess.Write))
->>>>>>> Stashed changes
+
         {
             var document = new Document(PageSize.A7, 10f, 10f, 10f, 0f);
             var writer = PdfWriter.GetInstance(document, fileStream);
@@ -103,11 +103,11 @@ public class PrintingManager : MonoBehaviour
         process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
         process.StartInfo.UseShellExecute = true;
         process.StartInfo.FileName = path;
-<<<<<<< Updated upstream
+
         process.StartInfo.Verb = "print";
-=======
+
        // process.StartInfo.Verb = "print";
->>>>>>> Stashed changes
+
         
         process.Start();
         //process.WaitForExit();
