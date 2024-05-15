@@ -21,7 +21,7 @@ public class MostrarGuardarDatos : MonoBehaviour
 
 
     public SpreadsheetWriter FuncionCall;
-    public PrintPDF impresionPdf;
+   
     public PrintingManager GeneradorPDF;
 
     // Variable para el archivo
@@ -80,9 +80,7 @@ public class MostrarGuardarDatos : MonoBehaviour
             Debug.Log("Información guardada en el archivo: " + blockText);
 
 
-            //PDF smartPDF 
-           /* impresionPdf = GameObject.Find("Main Camera").GetComponent<PrintPDF>();
-            impresionPdf.PrintDocument(blockText);*/
+            
 
             //printingManagerPDF
            GeneradorPDF = GameObject.Find("Main Camera").GetComponent<PrintingManager>();
