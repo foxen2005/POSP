@@ -8,6 +8,7 @@ using UnityEditor;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
+using System.Diagnostics;
 
 public class PrintingManager : MonoBehaviour
 {
@@ -19,15 +20,15 @@ public class PrintingManager : MonoBehaviour
         //arreglar que el archivo al abrirse no se muestra, esta direccion no se consigue
          //path = Application.dataPath + "/Resources/Ticket.pdf";  
 
-          path = Application.persistentDataPath + "/Resources/Ticket.pdf";
+         // path = Application.persistentDataPath + "/Resources/Ticket.pdf";
     }
 
     public void GenerateFile(string textRecibe, string numFile) {
         //File.Delete(Application.persistentDataPath + " bolet.pdf");
 
 
-        if (File.Exists(Application.dataPath + " bolet.pdf"))
-            File.Delete(Application.dataPath + " bolet.pdf");
+     /*   if (File.Exists(Application.dataPath + " bolet.pdf"))
+            File.Delete(Application.dataPath + " bolet.pdf");*/
         //using (var fileStream = new FileStream(path, FileMode.CreateNew, FileAccess.Write))
         using (var fileStream = new FileStream(Application.persistentDataPath + " bolet " + numFile + ".pdf", FileMode.CreateNew , FileAccess.Write ))
 
@@ -42,7 +43,7 @@ public class PrintingManager : MonoBehaviour
             var baseFont = BaseFont.CreateFont(BaseFont.HELVETICA_BOLD, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
           
             //Paragraph p = new Paragraph(string.Format("Ticket Id : {0}",12345 )); //iSFSObject.GetUtfString("TICKET_ID"
-            Paragraph p = new Paragraph(string.Format("Documento Numero: \n"+numFile)); //iSFSObject.GetUtfString("TICKET_ID"
+            Paragraph p = new Paragraph(string.Format("BOLETA ELECTRONICA: "+numFile+"\n\n")); //iSFSObject.GetUtfString("TICKET_ID"
             p.Alignment = Element.ALIGN_CENTER;
             document.Add(p);
 
@@ -56,11 +57,21 @@ public class PrintingManager : MonoBehaviour
 
             document.Close();
             writer.Close();
+
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
+            process.StartInfo.UseShellExecute = true;
+            process.StartInfo.FileName = Application.persistentDataPath + " bolet " + numFile + ".pdf";
+
+           // process.StartInfo.Verb = "print";
+
+            process.Start();
         }
-        
-       /* StreamWriter writeri = new StreamWriter("/idbfs/Ticket.pdf", false);
-        writeri.WriteLine(string.Format(textRecibe));
-        writeri.Close();*/
+
+        /* StreamWriter writeri = new StreamWriter("/idbfs/Ticket.pdf", false);
+         writeri.WriteLine(string.Format(textRecibe));
+         writeri.Close();*/
 
 
         //StreamWriter writer = new StreamWriter(path, false);
@@ -70,10 +81,10 @@ public class PrintingManager : MonoBehaviour
         //    writer.WriteLine(string.Format("Bet Number : {0}     BetAmount : {1}", betting.GetSFSObject(i).GetUtfString("BET_NUM"), betting.GetSFSObject(i).GetDouble("BET_AMOUNT")));
         //writer.Close();
 
-        //PrintFiles();
+        // PrintFiles();
     }
 
-   public void PrintFiles()
+  /* public void PrintFiles()
     {
         Debug.Log(path);
         if (path == null)
@@ -105,11 +116,11 @@ public class PrintingManager : MonoBehaviour
 
       
 
-        process.StartInfo.Verb = "print";
+       // process.StartInfo.Verb = "print";
 
         
         process.Start();
         //process.WaitForExit();
 
-    }
+    }*/
 }

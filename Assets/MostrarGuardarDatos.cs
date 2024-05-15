@@ -16,12 +16,6 @@ public class MostrarGuardarDatos : MonoBehaviour
 
 
 
-
-
-
-
-    public SpreadsheetWriter FuncionCall;
-   
     public PrintingManager GeneradorPDF;
 
     // Variable para el archivo
@@ -31,8 +25,7 @@ public class MostrarGuardarDatos : MonoBehaviour
     void Start()
     {
 
-        // Se establece la ruta del archivo
-     //   rutaArchivo = Application.dataPath + "/SaveData/datosObjeto.txt";
+  
     }
 
 
@@ -88,9 +81,7 @@ public class MostrarGuardarDatos : MonoBehaviour
             GeneradorPDF.GenerateFile(blockText, contadorArchivo.ToString());
            // GeneradorPDF.PrintFiles(contadorArchivo.ToString());
 
-          /*  //enviar a server
-            FuncionCall = GameObject.Find("Main Camera").GetComponent<SpreadsheetWriter>();
-            FuncionCall.EnviarDatos(sheet);*/
+       
 
 
         }
