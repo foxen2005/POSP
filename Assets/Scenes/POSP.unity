@@ -852,9 +852,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 519420038}
-        m_TargetAssemblyTypeName: PrintingManager, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 519420039}
+        m_TargetAssemblyTypeName: DriveSync, Assembly-CSharp
+        m_MethodName: GetFile
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1552,8 +1552,8 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
-  - component: {fileID: 519420036}
   - component: {fileID: 519420038}
+  - component: {fileID: 519420039}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1687,18 +1687,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoDeArchivos: {fileID: 1427011792}
   textoARchivo2: {fileID: 0}
---- !u!114 &519420036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 981b9047d238a6a49b61db7655cedaf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &519420038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1709,6 +1697,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 342fca0fefa78f94aac97f66c5c21584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &519420039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd25dfc8b99e20d4e88e77e1fe3f03d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &542366959
@@ -7020,7 +7020,6 @@ MonoBehaviour:
   textoAMostrar: {fileID: 1105298953}
   textNotificaEscritura: {fileID: 751974200}
   RutaText: {fileID: 1559546226}
-  FuncionCall: {fileID: 519420036}
   GeneradorPDF: {fileID: 519420038}
 --- !u!224 &2118460903
 RectTransform:

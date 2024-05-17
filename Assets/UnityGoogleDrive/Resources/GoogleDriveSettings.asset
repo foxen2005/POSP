@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: GoogleDriveSettings
   m_EditorClassIdentifier: 
   genericClientCredentials:
-    client_id: 
-    project_id: 
-    auth_uri: 
-    token_uri: 
-    auth_provider_x509_cert_url: 
-    client_secret: 
-    redirect_uris: []
+    client_id: 502306034647-pr0eh5monbijm847hq43g0pb2gq6hs9o.apps.googleusercontent.com
+    project_id: keen-ally-423117-b9
+    auth_uri: https://accounts.google.com/o/oauth2/auth
+    token_uri: https://oauth2.googleapis.com/token
+    auth_provider_x509_cert_url: https://www.googleapis.com/oauth2/v1/certs
+    client_secret: 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
+    redirect_uris:
+    - http://localhost
   uriSchemeClientCredentials:
-    clientId: 
-    reversedClientId: 
+    clientId: 502306034647-pr0eh5monbijm847hq43g0pb2gq6hs9o.apps.googleusercontent.com
+    reversedClientId: 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
     plistVersion: 
     bundleId: 
   accessScopes:
