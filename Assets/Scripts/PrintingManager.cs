@@ -12,7 +12,7 @@ using System.Diagnostics;
 
 public class PrintingManager : MonoBehaviour
 {
-    string path = null;
+    //string path = null;
     
     void Start()
     {

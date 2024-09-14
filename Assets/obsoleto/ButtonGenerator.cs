@@ -58,8 +58,8 @@ public class ButtonGenerator : MonoBehaviour
 
                     caracteristicas.nombreObjeto = buttonNames[i];
                     caracteristicas.nombreGrupo = group_name[i];
-                    caracteristicas.Valor_objet = tempo;
-                    caracteristicas.valor2 = control;
+                    caracteristicas.Valor_objet = tempo.ToString();
+                    caracteristicas.valor2 = control.ToString();
                 }
             }
         }

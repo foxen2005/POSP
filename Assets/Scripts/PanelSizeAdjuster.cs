@@ -8,73 +8,49 @@ public class PanelSizeAdjuster : MonoBehaviour, IDragHandler
     public Vector2 manualSize = new Vector2(100f, 100f); // Tamaño manual que se puede ajustar desde el inspector
     public Vector3 scale = new Vector3(1f, 1f, 1f); // Escala que se puede ajustar desde el inspector
 
-    private RectTransform rectTransform;
+    public int childCount; // Variable para contar los hijos activos
+    public float totalWidth; // Suma del ancho de todos los hijos
+    public float totalHeight; // Altura promedio de los hijos (suma de alturas / 3)
+
+    public RectTransform rectTransform;
     private Canvas canvas;
+    private bool adjustSizeAutomatically = false; // Bandera para activar el ajuste automático
 
     void Awake()
     {
-        
-
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
-       
+
         if (canvas == null)
         {
             Debug.LogError("PanelSizeAdjuster: No se encontró un Canvas en los padres.");
         }
-        SetAnchorToTopLeft();
-       // CenterPanelOnScreen();
-
     }
 
-    void Start()
+    void Update()
     {
-        AdjustSizeToChildren();
-        
-    }
-   
-
-
-private void SetAnchorToTopLeft()
-{
-    // Establecer el anclaje en la esquina superior izquierda
-    rectTransform.anchorMin = new Vector2(0, 1);
-    rectTransform.anchorMax = new Vector2(0, 1);
-
-    // Posicionar el objeto en la esquina superior izquierda
-    rectTransform.anchoredPosition = new Vector2(0, 0);
-}
-
-private void CenterPanelOnScreen()
-    {
-        rectTransform.anchoredPosition = Vector2.zero;
-    }
-
-    public void AdjustSizeToChildren()
-    {
-        // Tamaño fijo de los hijos
-        float childWidth = 80f;
-        float childHeight = 80f;
-
         // Contar solo los hijos activos
         int activeChildCount = 0;
+        float totalChildWidth = 0f;
+        float totalChildHeight = 0f;
+
         foreach (RectTransform child in rectTransform)
         {
             if (child.gameObject.activeInHierarchy)
             {
                 activeChildCount++;
+                totalChildWidth += child.rect.width;
+                totalChildHeight += child.rect.height;
             }
         }
 
-        // Calcular el número de filas necesarias
-        int rows = Mathf.CeilToInt(activeChildCount / 3f);
-
-        // Calcular el ancho y la altura total del panel
-        float panelWidth = (3 * childWidth) + (2 * padding); // 3 hijos por fila + padding entre columnas
-        float panelHeight = (rows * childHeight) + ((rows - 1) * padding) + (2 * padding); // Altura total de las filas + padding entre filas + padding superior e inferior
+        // Asignar los valores a las variables públicas
+        childCount = activeChildCount;
+        totalWidth = totalChildWidth;
+        totalHeight = childCount == 1 ? totalChildHeight : totalChildHeight / 3f;
 
         // Ajustar el tamaño del panel
-        rectTransform.sizeDelta = new Vector2(panelWidth, panelHeight);
+        rectTransform.sizeDelta = new Vector2(totalWidth + (2 * padding), totalHeight + (2 * padding));
     }
 
     public void SetManualSize()
@@ -91,12 +67,5 @@ private void CenterPanelOnScreen()
     public void ScalePanel()
     {
         rectTransform.localScale = scale;
-    }
-
-
-    public void Update()
-    {
-        SetManualSize(); // Establecer el tamaño manual al inicio
-        ScalePanel(); // Aplicar la escala al inicio
     }
 }

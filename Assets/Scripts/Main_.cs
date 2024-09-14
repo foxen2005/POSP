@@ -58,6 +58,7 @@ public class Main_ : MonoBehaviour
         Naranja = new Color(255, 120, 0);
         FillArrays();
 
+
     }
 
     private void FillArrays()
@@ -312,26 +313,25 @@ public class Main_ : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
-        if (timer > 3f && paso)
+       
+
+        if (timer > 1f && paso)
         {
+            GenerateButtons();
             paso = false;
             ///implementar delta time, para el cargado de elementos
-            GenerateButtons();
-            
             print("generar botones unpdate activado");
 
         }
-        if (timer > 5f)
+        if (timer > 1.5f)
         {
-            paso = false;
-            ///implementar delta time, para el cargado de elementos
             OrganizeGrid();
-
+            paso = false;
+            //organiza maya
             print("organizador activado");
 
         }
-        if (timer > 6f)
+        if (timer > 2.2f)
         {
             paso = false;
             ///implementar delta time, para el cargado de elementos
@@ -346,17 +346,22 @@ public class Main_ : MonoBehaviour
         }
        
 
-        if (oneShot && objetoPadre != null)
+     /*   if (oneShot && objetoPadre != null)
         {
             asigna();
             oneShot = false;
-        }
+        }*/
 
 
 
         if (timer > 20f)
         {
-            FillArrays();
+            FillArrays(); //lee archivo
+
+          /*  GenerateButtons();
+            OrganizeGrid();
+            GenerateCategoryButtons();*/
+
             timer = 0;
             print("refresco el lector");
         }

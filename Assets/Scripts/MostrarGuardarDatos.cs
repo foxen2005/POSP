@@ -3,20 +3,21 @@ using UnityEngine.UI;
 using System.Collections;
 using System.IO;
 using TMPro;
+using System;
 
 public class MostrarGuardarDatos : MonoBehaviour
 {
     // Variables para el texto
     public TMP_Text textoAMostrar, textNotificaEscritura, RutaText; // Texto donde se mostrará la información
     public static string textoRecibido; // Cadena que contiene la información del objeto
-    string blockText, sheet = "sheet = \"sheet = \\\"google.visualization.Query.setResponse({ \\\"\\\"version\\\"\\\":\\\"\\\"0.6\\\"\\\",\\\"\\\"reqId\\\"\\\":\\\"\\\"0\\\"\\\",\\\"\\\"status\\\":\\\"\\\"\\\"\\\"\\\"\\\"ok\\\"\\\",\\\"\\\"sig\\\"\\\":\\\"\\\"1299033392\\\"\\\",\\\"\\\"table\\\"\\\":{ \\\"\\\"cols\\\"\\\":[{ \\\"\\\"id\\\":\\\"A\\\"\\\",\\\"\\\"label\\\":\\\"\\\"\\\",\\\"\\\"type\\\":\\\"string\\\"},{ \\\"id\\\":\\\"B\\\",\\\"label\\\":\\\"\\\",\\\"type\\\":\\\"string\\\"},{ \\\"id\\\":\\\"C\\\",\\\"label\\\":\\\"\\\",\\\"type\\\":\\\"string\\\"},{ \\\"id\\\":\\\"D\\\",\\\"label\\\":\\\"\\\",\\\"type\\\":\\\"string\\\"}],\\\"rows\\\":[{ \\\"c\\\":[{ \\\"v\\\":\\\"name\\\"},{ \\\"v\\\":\\\"value\\\"},{ \\\"v\\\":\\\"group\\\"},{ \\\"v\\\":\\\"control\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Pollo\\\"},{ \\\"v\\\":\\\"0000\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Pizza\\\"},{ \\\"v\\\":\\\"0000\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Pasta\\\"},{ \\\"v\\\":\\\"3500\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Cocacola\\\"},{ \\\"v\\\":\\\"2002\\\"},{ \\\"v\\\":\\\"Bebidas\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Fanta\\\"},{ \\\"v\\\":\\\"1500\\\"},{ \\\"v\\\":\\\"Bebidas\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Agua\\\"},{ \\\"v\\\":\\\"1111\\\"},{ \\\"v\\\":\\\"Bebidas\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Galletas\\\"},{ \\\"v\\\":\\\"2111\\\"},{ \\\"v\\\":\\\"Postres\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Chicles\\\"},{ \\\"v\\\":\\\"1550\\\"},{ \\\"v\\\":\\\"Postres\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Torta\\\"},{ \\\"v\\\":\\\"1500\\\"},{ \\\"v\\\":\\\"Postres\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"pastelito\\\"},{ \\\"v\\\":\\\"2500\\\"},{ \\\"v\\\":\\\"fritura\\\"},{ \\\"v\\\":\\\"0\\\"}]},{ \\\"c\\\":[{ \\\"v\\\":\\\"Camarones\\\"},{ \\\"v\\\":\\\"11110\\\"},{ \\\"v\\\":\\\"Comida\\\"},{ \\\"v\\\":\\\"0\\\"}]}],\\\"parsedNumHeaders\\\":0} })\\\" ;\";";
+    string blockText;
     string[] TextArray;
+    public string tempo;
+    private StringStorage GuardadorString;
 
 
 
-
-
-    public PrintingManager GeneradorPDF;
+    private PrintingManager GeneradorPDF;
 
     // Variable para el archivo
     private string rutaArchivo; // Ruta del archivo donde se guardará la información
@@ -67,7 +68,7 @@ public class MostrarGuardarDatos : MonoBehaviour
             writer.Close();
 
 
-            RutaText.text = rutaArchivoActual;
+           // RutaText.text = rutaArchivoActual;
             // Muestra un mensaje de confirmación
             Debug.Log("Información guardada en el archivo: " + rutaArchivoActual);
             Debug.Log("Información guardada en el archivo: " + blockText);
@@ -86,19 +87,29 @@ public class MostrarGuardarDatos : MonoBehaviour
 
         }
 
+        tempo = blockText;
+
+        GuardadorString = GameObject.Find("Main Camera").GetComponent<StringStorage>();
+
+        GuardadorString.SaveStringToPlayerPrefs(tempo);
+
+
         blockText = "";
         textoRecibido = "";
         ControladorSuma.SUMA = 0;
+        tempo = "";
 
 
 
         if (File.Exists(rutaArchivoActual))
         {
-            textNotificaEscritura.text = "Archivo creado con éxito.";
+            Debug.Log("Archivo creado con éxito.");
+            //textNotificaEscritura.text = "Archivo creado con éxito.";
         }
         else
         {
-            textNotificaEscritura.text = "Error: El archivo no se pudo crear.";
+            Debug.Log("Error: El archivo no se pudo crear.");
+            //textNotificaEscritura.text = "Error: El archivo no se pudo crear.";
         }
 
 
